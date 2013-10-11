@@ -11,4 +11,3 @@ feature "user can log in" do
   end
 end
 
-end
