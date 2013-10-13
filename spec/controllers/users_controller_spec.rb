@@ -10,7 +10,7 @@ describe UsersController do
   describe 'POST create' do
     let(:new_user) { FactoryGirl.build(:user) }
     it 'creates a new user' do
-      post :create, :user => { username: new_user.username, password: new_user.password }
+      post :create, :user => { username: new_user.username, password: new_user.password, password_confirmation: new_user.password_confirmation }
       expect(assigns(:user).username).to eq(new_user.username)
       expect(assigns(:user).password).to eq(new_user.password)
     end
@@ -21,7 +21,7 @@ describe UsersController do
     end
 
     it 'renders correct page when user info is valid' do
-      expect(post :create, :user => { username: new_user.username, password: new_user.password }).to redirect_to user_path(User.last.id)
+      expect(post :create, :user => { username: new_user.username, password: new_user.password, password_confirmation: new_user.password_confirmation }).to redirect_to user_path(User.last.id)
     end
   end
 

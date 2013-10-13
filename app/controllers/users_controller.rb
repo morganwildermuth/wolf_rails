@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user].permit(:username, :password))
+    @user = User.new(params[:user].permit(:username, :password_confirmation, :password))
     if @user.save
       redirect_to user_path(@user.id) and return
     else
