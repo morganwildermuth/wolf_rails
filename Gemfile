@@ -29,6 +29,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 862db1eee2ede679d8116374a2f6acc9020e1842
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

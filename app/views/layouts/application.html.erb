@@ -9,6 +9,6 @@
 <body>
 
 <%= yield %>
-
+<%= link_to "Log Out", controller: 'sessions', action: 'destroy', method: 'delete' %>
 </body>
 </html>
