@@ -4,5 +4,5 @@ WolfRails::Application.routes.draw do
 
 
   get "logout", to: "sessions#destroy"
-  root to: 'user#new'
+  root to: 'users#new'
 end
