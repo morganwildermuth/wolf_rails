@@ -20,6 +20,3 @@
 //= require backbone/wolf_rails
 //= require_tree .
 
-$(document).ready(function(){
-  alert('working!');
-});
