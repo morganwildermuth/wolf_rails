@@ -14,6 +14,6 @@ class WolvesController < ApplicationController
   end
 
   def index
-    @wolves = Wolf.all
+    @wolves = Wolf.where(user_id: current_user.id)
   end
 end
