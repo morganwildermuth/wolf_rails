@@ -1,4 +1,6 @@
 WolfRails::Application.routes.draw do
+  resources :wolves
+
   resources :users, except: [:index, :edit, :update, :destroy]
   resources :sessions, only: [:new, :create]
 

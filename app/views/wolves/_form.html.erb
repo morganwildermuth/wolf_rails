@@ -1,0 +1,37 @@
+<%= form_for(@wolf) do |f| %>
+  <% if @wolf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wolf.errors.count, "error") %> prohibited this wolf from being saved:</h2>
+
+      <ul>
+      <% @wolf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :health %><br>
+    <%= f.number_field :health %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

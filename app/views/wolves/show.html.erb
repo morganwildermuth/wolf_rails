@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wolf.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @wolf.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @wolf.gender %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @wolf.health %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @wolf.user %>
+</p>
+
+<%= link_to 'Edit', edit_wolf_path(@wolf) %> |
+<%= link_to 'Back', wolves_path %>
