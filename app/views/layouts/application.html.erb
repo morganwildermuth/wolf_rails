@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="title">
+    <h1>The Wolf Game</h1>
+    <p><small>again</small></p>
+    <br>
+  </div>
 
 <%= yield %>
+<br>
+<div id="footer">
 <%= link_to "Log Out", controller: 'sessions', action: 'destroy', method: 'delete' %>
+<%= link_to "Log In", controller: 'sessions', action: 'new' %>
+</div>
 </body>
 </html>
