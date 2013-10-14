@@ -12,10 +12,6 @@
  *= require_tree .
  */
 
- #footer {
-  text-align: center;
- }
-
-#title {
+#footer {
   text-align: center;
 }

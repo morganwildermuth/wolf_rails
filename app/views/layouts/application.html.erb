@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -15,10 +15,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Some Store</a>
+        <a class="brand" href="#">The Wolf Game</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Browse Products", users_path %></li>
+            <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Price List" %></li>
             <li><%= link_to "Contact Us" %></li>
             <li><%= link_to "Cart" %></li>
@@ -27,12 +27,6 @@
       </div>
     </div>
   </div>
-  <div id="title">
-    <h1>The Wolf Game</h1>
-    <p><small>again</small></p>
-    <br>
-  </div>
-
 <%= yield %>
 <br>
 <div id="footer">
