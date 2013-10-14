@@ -26,4 +26,4 @@
 </p>
 
 <%= link_to 'Edit', edit_wolf_path(@wolf) %> |
-<%= link_to 'Back', wolves_path %>
+<%= link_to 'Back', controller: 'users', action: 'show', id: current_user.id %>

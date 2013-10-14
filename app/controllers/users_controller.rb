@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @wolf = Wolf.new
+    @wolves = Wolf.all
     @user = User.find(params[:id])
   end
 end

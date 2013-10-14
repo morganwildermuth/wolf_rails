@@ -20,16 +20,13 @@ ActiveRecord::Schema.define(version: 20131014012038) do
     t.string "username"
     t.string "password_confirmation"
     t.string "password_digest"
-    t.string "remember_token"
   end
-
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
   create_table "wolves", force: true do |t|
     t.string   "name"
-    t.integer  "age"
+    t.integer  "age",        default: 0
     t.string   "gender"
-    t.integer  "health"
+    t.integer  "health",     default: 100
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

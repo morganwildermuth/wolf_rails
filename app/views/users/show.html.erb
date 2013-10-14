@@ -1,2 +1,9 @@
 Hey <%= @user.username %>!
-<%= link_to "New Wolf", controller: 'wolves', action: 'new' %>
+<div id="new_wolf_form">
+  <h2>Create Wolf</h2>
+  <%=render "wolves/form"%>
+</div>
+<div id="all_wolves">
+  <%=render "wolves/index"%>
+</div>
+<p><%= link_to "New Wolf", controller: 'wolves', action: 'new' %>

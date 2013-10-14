@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', wolves_path %>
+<%= link_to 'Back', controller: 'users', action: 'show', id: current_user.id %>
