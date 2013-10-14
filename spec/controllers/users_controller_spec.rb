@@ -21,11 +21,7 @@ describe UsersController do
     end
 
     it 'renders correct page when user info is valid' do
-<<<<<<< HEAD
       expect(post :create, :user => { username: new_user.username, password: new_user.password, password_confirmation: new_user.password_confirmation }).to redirect_to user_path(User.last.id)
-=======
-      expect(post :create, :user => { username: new_user.username, password: new_user.password, email: new_user.email }).to redirect_to user_path(User.last.id)
->>>>>>> 862db1eee2ede679d8116374a2f6acc9020e1842
     end
   end
 
