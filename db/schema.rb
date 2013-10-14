@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131014032747) do
   create_table "wolves", force: true do |t|
     t.string  "name"
     t.integer "age",     default: 0
+    t.string  "gender"
     t.integer "health",  default: 100
     t.integer "user_id"
   end
