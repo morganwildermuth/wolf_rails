@@ -1,5 +1,18 @@
-<% @wolves.each do |wolf| %>
-<p><%= wolf.name %>
-<%= wolf.gender %>
-<%= wolf.age %></p>
-<% end %>
+<table class="table table-striped" id="wolf_table">
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <td>Health</td>
+  </tr>
+  <% @wolves.each do |wolf| %>
+    <tr>
+      <td><%= wolf.name %></td>
+      <td><%= wolf.gender %></td>
+      <td><%= wolf.age %></td>
+      <td><%= wolf.health %></td>
+    </tr>
+  <% end %>
+</table>
+
+

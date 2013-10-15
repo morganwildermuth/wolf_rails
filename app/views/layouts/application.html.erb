@@ -10,15 +10,9 @@
   <div class="navbar navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#">The Wolf Game</a>
+        <a class="brand" href=<%= root_path %>> The Wolf Game</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Pack", wolves_path %></li>
             <li><%= link_to 'New Wolf', new_wolf_path %></li>
             <li><%= link_to "History" %></li>
@@ -29,9 +23,13 @@
   </div>
 <%= yield %>
 <br>
-<div id="footer">
-<%= link_to "Log Out", controller: 'sessions', action: 'destroy', method: 'delete' %>
-<%= link_to "Log In", controller: 'sessions', action: 'new' %>
-</div>
+  <div id="footer">
+    <%= link_to "Log In", controller: 'sessions', action: 'new' %> |
+    <%= link_to "New User", controller: 'users', action: 'new' %> | <%= link_to "Log Out", controller: 'sessions', action: 'destroy', method: 'delete' %> 
+  </div>
+<!--   <span id="footer_special" class="visible-xs hidden-sm hidden-md hidden-lg">
+    <%= link_to "Pack", controller: 'wolves', action: 'index' %> |
+    <%= link_to "New Wolf", controller: 'wolves', action: 'new' %> 
+  </span> -->
 </body>
 </html>

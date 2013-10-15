@@ -1,6 +1,9 @@
 class UsersController < ApplicationController 
   def new
     @user = User.new
+    if signed_in?
+      redirect_to current_user
+    end
   end
 
   def create

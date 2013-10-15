@@ -1,6 +1,10 @@
 class WolvesController < ApplicationController 
   def new
-    @wolf = Wolf.new
+    if signed_in?
+      @wolf = Wolf.new
+    else
+      redirect_to new_session_path
+    end
   end
 
   def create
@@ -14,6 +18,10 @@ class WolvesController < ApplicationController
   end
 
   def index
-    @wolves = Wolf.where(user_id: current_user.id)
+    if signed_in?
+      @wolves = Wolf.where(user_id: current_user.id)
+    else
+      redirect_to new_session_path
+    end
   end
 end
