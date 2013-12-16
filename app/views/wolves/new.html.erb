@@ -1,14 +1,21 @@
 <br><br>
 <div class="row">
   <div class="pagination-centered">
-    <%= form_for(@wolf) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :gender %>
-      <%= f.text_field :gender %>
-
-      <p><%= f.submit %></p>
+    <%= form_for(@wolf, :remote => true, :html=> { class: 'create_wolf_form' })  do |f| %>
+      <h2 class='hidden'><%= f.label :male_name %></h2>
+      <%= f.text_field :name, placeholder: 'Alpha Female Name' %>
+      <h2 class='hidden'><%= f.label :gender %></h2>
+      <p class="hidden"> <%= f.text_field :gender, value: 'Female' %></p>
+      <p class="hidden"><%= f.submit %></p>
     <% end %>
+
+    <%= form_for(@wolf, :remote => true, :html=> { class: 'create_wolf_form' }) do |f| %>
+      <h2 class='hidden'><%= f.label :male_name %></h2>
+      <%= f.text_field :name, placeholder: 'Alpha Male Name' %>
+      <h2 class='hidden'><%= f.label :female_name %></h2>
+      <p class="hidden"><%= f.text_field :gender, value: 'Male' %></p>
+      <p class="hidden"><%= f.submit %></p>
+    <% end %>
+    <button id="submit_pack_creation">Create Your Pack</button>
   </div>
 </div>

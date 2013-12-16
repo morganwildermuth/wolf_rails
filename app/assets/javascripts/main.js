@@ -1,3 +1,11 @@
+var Pack = {
+  init: function(){
+    $("#submit_pack_creation").click(function(){
+      $('form.create_wolf_form').trigger('submit.rails');
+    })
+  }
+}
+
 var Wolf = {
   init: function() {
     $('form#new_wolf').on('ajax:success', this.addWolf);
@@ -10,5 +18,5 @@ var Wolf = {
 
 $(document).ready(function(){ 
   Wolf.init();
-  console.log('got here');
+  Pack.init();
 })
