@@ -1,4 +1,4 @@
-<table class="table table-striped" id="game_table">
+<table class="table table-striped game_stat" id="game_info">
   <tr>
     <th>Season</th>
     <th>Year</th>
@@ -7,11 +7,17 @@
   <tr>
     <td><%= @current_game.season %></td>
     <td><%= @current_game.year %></td>
-    <td><%= @current_game.location %></td>
   </tr>
 </table>
 
-<table class="table table-striped" id="wolf_table">
+<!-- <div class="game_stat">
+  <%= form_for(@location, :remote => true) do |f| %>
+    <%= f.select :name, options_for_select([['Forest', 1, {'data-size' => '2.8 million'}], ['Forest of Twilight', 1, {'data-size' => '2.8 million'}], ['City', 1, {'data-size' => '2.8 million'}], ['Desert', 1, {'data-size' => '2.8 million'}], ['Town', 2, {'data-size' => '3.2 million'}]], 2) %>
+    <p><%= f.submit 'Choose Next Location'%></p>
+  <% end %>
+</div> -->
+
+<table class="table table-striped game_stat" id="wolf_info">
   <tr>
     <th>Name</th>
     <th>Gender</th>
@@ -28,4 +34,5 @@
   <% end %>
 </table>
 
-
+<span id="grid">
+</span>
