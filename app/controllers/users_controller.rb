@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user].permit(:username, :password_confirmation, :password, :password_digest))
     if @user.save
+      @user.game = Game.create
+      @user.save(validate: false)
       log_in @user
       redirect_to @user and return
     else
