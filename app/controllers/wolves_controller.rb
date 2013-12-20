@@ -15,7 +15,7 @@ class WolvesController < ApplicationController
       user = current_user
       user.ready_to_play = true if current_user.wolves.length >= 2
       user.save(validate: false)
-      redirect_to wolves_path
+      render :js => "window.location = #{wolves_path.to_json}" if current_user.ready_to_play
     else
       render :new
     end
