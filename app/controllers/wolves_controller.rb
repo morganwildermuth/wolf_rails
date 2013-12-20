@@ -24,6 +24,9 @@ class WolvesController < ApplicationController
   def index
     if signed_in?
       @wolves = Wolf.where(user_id: current_user.id)
+      @game = Game.new
+      @location = Location.new
+      @current_game = current_user.game
     else
       redirect_to new_session_path
     end
