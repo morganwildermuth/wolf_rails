@@ -22,5 +22,9 @@
   display:none;
 }
 
+.error_alert{
+  background-color: yellow;
+}
+
 
 
