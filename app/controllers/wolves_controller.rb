@@ -1,6 +1,7 @@
 class WolvesController < ApplicationController 
   def new
     if signed_in?
+      redirect_to wolves_path if current_user.ready_to_play
       @wolf = Wolf.new
     else
       redirect_to new_session_path
@@ -11,6 +12,9 @@ class WolvesController < ApplicationController
     @wolf = Wolf.new(params[:wolf].permit(:name, :age, :gender, :health, :user_id))
     @wolf.user_id = current_user.id
     if @wolf.save
+      user = current_user
+      user.ready_to_play = true if current_user.wolves.length >= 2
+      user.save(validate: false)
       redirect_to wolves_path
     else
       render :new

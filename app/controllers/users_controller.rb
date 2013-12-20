@@ -12,11 +12,13 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to @user and return
     else
+      flash[:notice] = "Username already in use."
       render :new
     end
   end
 
   def show
+    redirect_to new_wolf_path if !(current_user.ready_to_play)
     @user = User.find(params[:id])
   end
 end
